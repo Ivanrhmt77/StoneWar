@@ -9,9 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.LineBorder;
 
 import Game.Player;
 
@@ -30,11 +28,7 @@ public class WelcomeScreen extends Screen {
 
     @Override
     protected void initialize() {
-        panel = new JPanel();
-        panel.setLayout(null);
-        panel.setSize(1100, 768);
-        panel.setBorder(new LineBorder(Color.WHITE, 3));
-        panel.setBackground(Color.BLACK);
+        super.initialize();
 
         welcomeTextLabel = new JLabel("Welcome to Stone War !");
         welcomeTextLabel.setBounds(215, 100, 671, 85);

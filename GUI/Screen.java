@@ -1,10 +1,13 @@
 package GUI;
 
+import java.awt.Color;
+
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 import Game.Player;
 
-public abstract class Screen {
+public class Screen {
 
     protected JPanel panel;
     protected ScreenHandler screenHandler;
@@ -14,7 +17,13 @@ public abstract class Screen {
         this.screenHandler = screenHandler;
     }
 
-    protected abstract void initialize();
+    protected void initialize() {
+        panel = new JPanel();
+        panel.setLayout(null);
+        panel.setSize(1100, 768);
+        panel.setBorder(new LineBorder(Color.WHITE, 3));
+        panel.setBackground(Color.BLACK);
+    }
 
     public JPanel getPanel() {
         return panel;
