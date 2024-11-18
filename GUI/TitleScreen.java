@@ -6,26 +6,29 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class TitleScreen {
-    
-    private JPanel titleNamePanel;
-    private JLabel titleNameLabel;
-    private Font titleFont = new Font("Times New Roman", Font.PLAIN, 120);
+import Game.Player;
 
-    public TitleScreen() {
-        titleNamePanel = new JPanel();
-        titleNamePanel.setBounds(250, 100, 600, 150);
-        titleNamePanel.setBackground(Color.BLACK);
+public class TitleScreen extends Screen {
+    
+    private JLabel titleNameLabel;
+
+    public TitleScreen(ScreenHandler screenHandler, Player player) {
+        super(screenHandler);
+        this.player = player;
+        initialize();
+    }
+
+    @Override
+    protected void initialize() {
+        panel = new JPanel();
+        panel.setBounds(250, 100, 600, 150);
+        panel.setBackground(Color.BLACK);
 
         titleNameLabel = new JLabel("Stone War");
         titleNameLabel.setForeground(Color.WHITE);
-        titleNameLabel.setFont(titleFont);
+        titleNameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 120));
 
-        titleNamePanel.add(titleNameLabel);
-    }
-
-    public JPanel getTitleNamePanel() {
-        return titleNamePanel;
+        panel.add(titleNameLabel);
     }
 
 }
