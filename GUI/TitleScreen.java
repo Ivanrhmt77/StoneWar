@@ -8,12 +8,18 @@ import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 
 import Game.Player;
+import GameSystem.AudioPlayer;
 
 public class TitleScreen extends Screen {
 
+    private AudioPlayer backgroundMusic = new AudioPlayer("/Assets/Audio/titleScreenBG.wav");
+
     public TitleScreen(ScreenHandler screenHandler, Player player) {
         super(screenHandler);
+
         this.player = player;
+        backgroundMusic.loop();
+
         initialize();
     }
 
