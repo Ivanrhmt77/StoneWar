@@ -21,13 +21,13 @@ public class ScreenHandler {
     }
 
     private void initialize() {
-        addScreen("welcome", new WelcomeScreen(this));
-
         wrapperPanel = new JPanel();
         wrapperPanel.setLayout(null);
         wrapperPanel.setBounds(50, 50, 1100, 768);
         wrapperPanel.setBorder(new LineBorder(Color.WHITE, 3));
         wrapperPanel.setBackground(Color.BLACK);
+
+        addScreen("welcome", new WelcomeScreen(this));
     }
 
     public void addScreen(String name, Screen screen) {
@@ -39,7 +39,7 @@ public class ScreenHandler {
             wrapperPanel.removeAll();
         
         Screen newScreen = screens.get(name);
-        if(newScreen != null) {
+        if(newScreen != null && newScreen.getPanel() != null) {
             wrapperPanel.add(newScreen.getPanel());
             currentScreen = newScreen;
         }

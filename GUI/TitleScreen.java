@@ -1,11 +1,10 @@
 package GUI;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.border.LineBorder;
 
 import Game.Player;
 import GameSystem.AudioPlayer;
@@ -13,6 +12,15 @@ import GameSystem.AudioPlayer;
 public class TitleScreen extends Screen {
 
     private AudioPlayer backgroundMusic = new AudioPlayer("/Assets/Audio/titleScreenBG.wav");
+    private JLabel titleNameLabel;
+    private JLabel playerNameLabel;
+    private JLabel levelLabel;
+    private JLabel expLabel;
+    private JLabel goldLabel;
+    private JButton startButton;
+    private JButton gachaButton;
+    private JButton inventoryButton;
+    private JButton exitButton;
 
     public TitleScreen(ScreenHandler screenHandler, Player player) {
         super(screenHandler);
@@ -21,56 +29,69 @@ public class TitleScreen extends Screen {
         backgroundMusic.loop();
 
         initialize();
+        submitAction();
     }
 
     @Override
     protected void initialize() {
         super.initialize();
 
-        panel.add(addLabel("Stone War", 276, 100, 548, 160, 120));
-        panel.add(addLabel("Name : " + player.getName(), 30, 30, 326, 32, 24));
-        panel.add(addLabel("Level " + player.getLevel(), 601, 30, 92, 32, 24));
-        panel.add(addLabel("Exp : " + player.getExp() + "/" + player.getMaxExp(), 743, 30, 150, 32, 24));
-        panel.add(addLabel("Gold : " + player.getGold(), 943, 30, 127, 32, 24));
+        titleNameLabel = addLabel("Stone War", 276, 100, 548, 160, 120);
+        playerNameLabel = addLabel("Name : " + player.getName(), 30, 30, 326, 32, 24);
+        levelLabel = addLabel("Level " + player.getLevel(), 601, 30, 92, 32, 24);
+        expLabel = addLabel("Exp : " + player.getExp() + "/" + player.getMaxExp(), 743, 30, 150, 32, 24);
+        goldLabel = addLabel("Gold : " + player.getGold(), 943, 30, 127, 32, 24);
 
-        panel.add(addMenuButton("Start Battle", 358));
-        panel.add(addMenuButton("Gacha", 428));
-        panel.add(addMenuButton("Inventory", 498));
-        panel.add(addMenuButton("Exit", 568));
+        startButton = addButton("Start Battle", 301, 358, 500);
+        gachaButton = addButton("Gacha", 301, 428, 500);
+        inventoryButton = addButton("Inventory", 301, 498, 500);
+        exitButton = addButton("Exit", 301, 568, 500);
+
+        panel.add(titleNameLabel);
+        panel.add(playerNameLabel);
+        panel.add(levelLabel);
+        panel.add(expLabel);
+        panel.add(goldLabel);
+
+        panel.add(startButton);
+        panel.add(gachaButton);
+        panel.add(inventoryButton);
+        panel.add(exitButton);
+
+        screenHandler.addScreen("soon", new ComingSoon(screenHandler));
     }
 
-    private JLabel addLabel(String text, int x, int y, int width, int height, int fontSize) {
-        JLabel label = new JLabel(text);
-
-        label.setBounds(x, y, width, height);
-        label.setForeground(Color.WHITE);
-        label.setFont(new Font("Times New Roman", Font.PLAIN, fontSize));
-
-        return label;
-    }
-
-    private JButton addMenuButton(String text, int y) {
-        JButton button = new JButton(text);
-
-        button.setBounds(301, y, 500, 50);
-        button.setBackground(Color.BLACK);
-        button.setForeground(Color.WHITE);
-        button.setFont(new Font("Times New Roman", Font.PLAIN, 30));
-        button.setBorder(new LineBorder(Color.WHITE, 1));
-
-        button.addMouseListener(new java.awt.event.MouseAdapter() {
+    @Override
+    protected void submitAction() {
+        super.submitAction();
+        
+        startButton.addActionListener(new ActionListener() {
             @Override
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                button.setBorder(new LineBorder(Color.MAGENTA, 2));
-            }
-    
-            @Override
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                button.setBorder(new LineBorder(Color.WHITE, 1));
+            public void actionPerformed(ActionEvent e) {
+                screenHandler.switchScreen("soon");
             }
         });
 
-        return button;
+        gachaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                screenHandler.switchScreen("soon");
+            }
+        });
+
+        inventoryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                screenHandler.switchScreen("soon");
+            }
+        });
+
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
 }
