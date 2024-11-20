@@ -69,7 +69,9 @@ public class TitleScreen extends Screen {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screenHandler.switchScreen("soon");
+                screenHandler.addScreen("battle", new BattleScreen(screenHandler, player));
+                screenHandler.switchScreen("battle");
+                titleScreenBacksound.stop();
             }
         });
 

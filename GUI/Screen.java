@@ -20,6 +20,7 @@ public abstract class Screen {
     protected Player player;
     protected JButton backButton;
     protected AudioPlayer titleScreenBacksound = new AudioPlayer("/Assets/Audio/titleScreenBG.wav");
+    protected AudioPlayer battleScreenBacksound = new AudioPlayer("/Assets/Audio/battleScreenBG.wav");
 
     public Screen(ScreenHandler screenHandler) {
         this.screenHandler = screenHandler;

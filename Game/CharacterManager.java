@@ -38,7 +38,7 @@ public class CharacterManager {
 
     private Image loadImage(String path) {
         ImageIcon icon = new ImageIcon(path);
-        return icon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+        return icon.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
     }
 
 }

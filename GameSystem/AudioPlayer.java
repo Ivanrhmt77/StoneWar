@@ -33,8 +33,10 @@ public class AudioPlayer {
     }
 
     public void stop() {
-        if (clip != null && clip.isRunning())
+        if (clip != null && clip.isRunning()) {
             clip.stop();
+            clip.setFramePosition(0);
+        }
     }
     
 }
