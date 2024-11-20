@@ -1,8 +1,12 @@
 package Game;
 
-import java.awt.Image;
+import java.awt.Color;
 
-public class Character {
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Hero {
     
     private String name;
     private int maxHp;
@@ -16,9 +20,9 @@ public class Character {
     private int healingEnergy;
     private boolean isDefending;
     private boolean isAlive;
-    private Image avatar;
+    private ImageIcon avatar;
 
-    public Character(String name, int maxHp, int maxEnergy, int basicDamage, int skillDamage, int skillEnergy, int healingAmount, int healingEnergy, Image avatar) {
+    public Hero(String name, int maxHp, int maxEnergy, int basicDamage, int skillDamage, int skillEnergy, int healingAmount, int healingEnergy, ImageIcon avatar) {
         this.name = name;
         this.maxHp = maxHp;
         this.currentHp = maxHp;
@@ -88,8 +92,42 @@ public class Character {
         return isAlive;
     }
 
-    public Image getAvatar() {
+    public ImageIcon getAvatar() {
         return avatar;
+    }
+
+    public int getCurrentEnergy() {
+        return currentEnergy;
+    }
+
+    public int getSkillEnergy() {
+        return skillEnergy;
+    }
+
+    public int getHealingEnergy() {
+        return healingEnergy;
+    }
+
+    public int getCurrentHp() {
+        return currentHp;
+    }
+
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    public int getMaxEnergy() {
+        return maxEnergy;
+    }
+
+    public JPanel getAvatarPanel(int x, int y) {
+        JLabel label = new JLabel(avatar);
+        JPanel panel = new JPanel();
+        panel.add(label);
+        panel.setBackground(Color.BLACK);
+        panel.setBounds(x, y, 200, 200);
+        
+        return panel;
     }
 
 }

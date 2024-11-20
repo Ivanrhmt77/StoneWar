@@ -1,22 +1,41 @@
 package GUI;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
+import Game.Hero;
 import Game.Player;
+import GameSystem.BattleSystem;
 
 public class BattleScreen extends Screen {
 
+    private BattleSystem battleSystem;
+    private JLabel basicAttackLabel;
+    private JLabel skillLabel;
+    private JLabel healLabel;
+    private JLabel defendLabel;
     private JButton basicAttackButton;
     private JButton skillButton;
     private JButton healButton;
     private JButton defendButton;
+    private JLabel battleInfoLabel;
+    private JLabel turnLabel;
+    private JPanel heroAvatar;
+    private JPanel opponentAvatar;
+    private JLabel heroHpLabel;
+    private JLabel heroEnergyLabel;
+    private JLabel opponentHpLabel;
+    private JLabel opponentEnergyLabel;
 
-    public BattleScreen(ScreenHandler screenHandler, Player player) {
+    public BattleScreen(ScreenHandler screenHandler, Player player, BattleSystem battleSystem) {
         super(screenHandler);
         this.player = player;
+        this.battleSystem = battleSystem;
         initialize();
         submitAction();
     }
@@ -25,15 +44,40 @@ public class BattleScreen extends Screen {
     protected void initialize() {
         super.initialize();
 
+        basicAttackLabel = addLabel("Basic Attack", 116, 688, 108, 14, 20);
+        skillLabel = addLabel("Skill", 408, 688, 40, 14, 20);
+        healLabel = addLabel("Heal", 663, 688, 41, 14, 20);
+        defendLabel = addLabel("Defend", 905, 688, 65, 14, 20);
+
         basicAttackButton = addButton("20 ATK", 50, 618, 235);
         skillButton = addButton("50 ATK -15 EP", 305, 618, 235);
         healButton = addButton("50 HP -15 EP", 560, 618, 235);
         defendButton = addButton("DEFEND -15 EP", 815, 618, 235);
 
+        battleInfoLabel = addLabel("Opponent's Turn", 403, 540, 304, 40, 40);
+        turnLabel = addLabel("Turn 1", 499, 60, 112, 40, 40);
+
+        heroAvatar = battleSystem.getHero().getAvatarPanel(168, 265);
+        opponentAvatar = battleSystem.getOpponent().getAvatarPanel(733, 265);
+
+        panel.add(basicAttackLabel);
+        panel.add(skillLabel);
+        panel.add(healLabel);
+        panel.add(defendLabel);
+
         panel.add(basicAttackButton);
         panel.add(skillButton);
         panel.add(healButton);
         panel.add(defendButton);
+
+        panel.add(battleInfoLabel);
+        panel.add(turnLabel);
+
+        panel.add(heroAvatar);
+        panel.add(opponentAvatar);
+
+        heroStatsPanel(battleSystem.getHero(), 30, 30);
+        heroStatsPanel(battleSystem.getOpponent(), 891, 30);
     }
 
     @Override
@@ -43,9 +87,8 @@ public class BattleScreen extends Screen {
         basicAttackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.setGold(player.getGold() + 100);
-                screenHandler.switchScreen("title");
-                battleScreenBacksound.stop();
+                battleSystem.getOpponent().takeDamage(battleSystem.getHero().basicAttack());
+                updateStats();
             }
         });
     }
@@ -54,5 +97,37 @@ public class BattleScreen extends Screen {
     public void onShow() {
         battleScreenBacksound.loop();
     }
+
+    private void heroStatsPanel(Hero hero, int x, int y) {
+        JPanel heroPanel = new JPanel();
+        heroPanel.setLayout(null);
+        heroPanel.setBackground(Color.BLACK);
+        heroPanel.setBounds(x, y, 179, 116);
+        
+        JLabel nameLabel = addLabel("Name : " + hero.getName(), 0, 0, 179, 32, 24);
+        if (hero == battleSystem.getHero()) {
+            heroHpLabel = addLabel("HP : " + hero.getCurrentHp() + "/" + hero.getMaxHp(), 0, 42, 179, 32, 24);
+            heroEnergyLabel = addLabel("Energy : " + hero.getCurrentEnergy() + "/" + hero.getMaxEnergy(), 0, 84, 179, 32, 24);
+            heroPanel.add(heroHpLabel);
+            heroPanel.add(heroEnergyLabel);
+        } else {
+            opponentHpLabel = addLabel("HP : " + hero.getCurrentHp() + "/" + hero.getMaxHp(), 0, 42, 179, 32, 24);
+            opponentEnergyLabel = addLabel("Energy : " + hero.getCurrentEnergy() + "/" + hero.getMaxEnergy(), 0, 84, 179, 32, 24);
+            heroPanel.add(opponentHpLabel);
+            heroPanel.add(opponentEnergyLabel);
+        }
+
+        heroPanel.add(nameLabel);
+        panel.add(heroPanel);
+    }
+
+    private void updateStats() {
+        heroHpLabel.setText("HP : " + battleSystem.getHero().getCurrentHp() + "/" + battleSystem.getHero().getMaxHp());
+        heroEnergyLabel.setText("Energy : " + battleSystem.getHero().getCurrentEnergy() + "/" + battleSystem.getHero().getMaxEnergy());
+    
+        opponentHpLabel.setText("HP : " + battleSystem.getOpponent().getCurrentHp() + "/" + battleSystem.getOpponent().getMaxHp());
+        opponentEnergyLabel.setText("Energy : " + battleSystem.getOpponent().getCurrentEnergy() + "/" + battleSystem.getOpponent().getMaxEnergy());
+    }
+    
     
 }

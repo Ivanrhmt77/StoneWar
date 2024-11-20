@@ -6,7 +6,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import Game.Hero;
+import Game.HeroManager;
 import Game.Player;
+import GameSystem.BattleSystem;
 
 public class TitleScreen extends Screen {
 
@@ -69,7 +72,10 @@ public class TitleScreen extends Screen {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screenHandler.addScreen("battle", new BattleScreen(screenHandler, player));
+                HeroManager heroManager = new HeroManager();
+                Hero hero1 = heroManager.getCharacterByName("Archer");
+                Hero hero2 = heroManager.getCharacterByName("Knight");
+                screenHandler.addScreen("battle", new BattleScreen(screenHandler, player, new BattleSystem(hero1, hero2)));
                 screenHandler.switchScreen("battle");
                 titleScreenBacksound.stop();
             }
