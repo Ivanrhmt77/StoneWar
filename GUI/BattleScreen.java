@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import Game.Hero;
@@ -88,9 +89,9 @@ public class BattleScreen extends Screen {
             @Override
             public void actionPerformed(ActionEvent e) {
                 battleSystem.getOpponent().takeDamage(battleSystem.getHero().basicAttack());
-                battleSystem.nextTurn();
-                updateUI();
-                battleSystem.opponentTurn();
+                if(!battleSystem.isFinished()) {
+                    battleSystem.nextTurn();
+                }
                 updateUI();
             }
         });
@@ -99,9 +100,9 @@ public class BattleScreen extends Screen {
             @Override
             public void actionPerformed(ActionEvent e) {
                 battleSystem.getOpponent().takeDamage(battleSystem.getHero().useSkill());
-                battleSystem.nextTurn();
-                updateUI();
-                battleSystem.opponentTurn();
+                if(!battleSystem.isFinished()) {
+                    battleSystem.nextTurn();
+                }
                 updateUI();
             }
         });
@@ -110,9 +111,9 @@ public class BattleScreen extends Screen {
             @Override
             public void actionPerformed(ActionEvent e) {
                 battleSystem.getHero().heal();
-                battleSystem.nextTurn();
-                updateUI();
-                battleSystem.opponentTurn();
+                if(!battleSystem.isFinished()) {
+                    battleSystem.nextTurn();
+                }
                 updateUI();
             }
         });
@@ -121,9 +122,9 @@ public class BattleScreen extends Screen {
             @Override
             public void actionPerformed(ActionEvent e) {
                 battleSystem.getHero().defend();
-                battleSystem.nextTurn();
-                updateUI();
-                battleSystem.opponentTurn();
+                if(!battleSystem.isFinished()) {
+                    battleSystem.nextTurn();
+                }
                 updateUI();
             }
         });
@@ -167,18 +168,32 @@ public class BattleScreen extends Screen {
         opponentHpLabel.setText("HP : " + battleSystem.getOpponent().getCurrentHp() + "/" + battleSystem.getOpponent().getMaxHp());
         opponentEnergyLabel.setText("Energy : " + battleSystem.getOpponent().getCurrentEnergy() + "/" + battleSystem.getOpponent().getMaxEnergy());
 
-        if(battleSystem.isEnoughEnergy("skill"))
-            skillButton.setEnabled(false);
-        if(battleSystem.isEnoughEnergy("heal"))
-            healButton.setEnabled(false);
-        if(battleSystem.isEnoughEnergy("defend"))
-            defendButton.setEnabled(false);
+        updateButton(skillButton, "skill");
+        updateButton(healButton, "heal");
+        updateButton(defendButton, "defend");
         
         if(battleSystem.isFinished()) {
-            screenHandler.switchScreen("title");
             battleScreenBacksound.stop();
+            
+            if(battleSystem.isWinning()) {
+                victorySound.play();
+                JOptionPane.showMessageDialog(null, "Congratulations! You defeated the Opponent!", "Victory", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                defeatSound.play();
+                JOptionPane.showMessageDialog(null, "You lost! Opponent wins!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            screenHandler.switchScreen("title");
+            victorySound.stop();
+            defeatSound.stop();
         }
     }
     
+    private void updateButton(JButton button, String action) {
+        if(battleSystem.isEnoughEnergy(action))
+            button.setEnabled(false);
+        else
+            button.setEnabled(true);
+    }
     
 }

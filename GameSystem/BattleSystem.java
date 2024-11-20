@@ -9,47 +9,40 @@ public class BattleSystem {
     private Hero hero;
     private Hero opponent;
     private int turn;
-    private boolean playerTurn;
 
     public BattleSystem(Hero hero, Hero opponent) {
         this.hero = hero;
         this.opponent = opponent;
         this.turn = 1;
-        playerTurn = true;
     }
 
     public boolean isEnoughEnergy(String action) {
         if(action.equalsIgnoreCase("skill"))
-            return hero.getCurrentEnergy() <= hero.getSkillEnergy();
+            return hero.getCurrentEnergy() < hero.getSkillEnergy();
         if(action.equalsIgnoreCase("heal"))
-            return hero.getCurrentEnergy() <= hero.getHealingEnergy();
+            return hero.getCurrentEnergy() < hero.getHealingEnergy();
         if(action.equalsIgnoreCase("defend"))
-            return hero.getCurrentEnergy() <= 15;
+            return hero.getCurrentEnergy() < 15;
         
             return false;
     }
 
     public boolean isFinished() {
-        if (!hero.isAlive()) {
-            JOptionPane.showMessageDialog(null, "You lost! Opponent wins!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+        return !hero.isAlive() || !opponent.isAlive();
+    }
+
+    public boolean isWinning() {
+        if (!opponent.isAlive())
             return true;
-        } else if (!opponent.isAlive()) {
-            JOptionPane.showMessageDialog(null, "Congratulations! You defeated the Opponent!", "Victory", JOptionPane.INFORMATION_MESSAGE);
-            return true;
-        }
+
         return false;
     }    
 
     public void nextTurn() {
         turn++;
 
-        if(!playerTurn) {
-            
-            playerTurn = false;
-        } else {
-            
-            playerTurn = true;
-        }
+        if(!isPlayerTurn() && !isFinished())
+            opponentTurn();
     }
 
     public void opponentTurn() {
@@ -111,7 +104,7 @@ public class BattleSystem {
     }
 
     public boolean isPlayerTurn() {
-        return playerTurn;
+        return turn % 2 != 0;
     }
 
 }
