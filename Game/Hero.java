@@ -120,6 +120,18 @@ public class Hero {
         return maxEnergy;
     }
 
+    public int getBasicDamage() {
+        return basicDamage;
+    }
+
+    public int getHealingAmount() {
+        return healingAmount;
+    }
+
+    public int getSkillDamage() {
+        return skillDamage;
+    }
+
     public JPanel getAvatarPanel(int x, int y) {
         JLabel label = new JLabel(avatar);
         JPanel panel = new JPanel();

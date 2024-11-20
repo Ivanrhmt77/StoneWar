@@ -49,13 +49,13 @@ public class BattleScreen extends Screen {
         healLabel = addLabel("Heal", 663, 688, 41, 14, 20);
         defendLabel = addLabel("Defend", 905, 688, 65, 14, 20);
 
-        basicAttackButton = addButton("20 ATK", 50, 618, 235);
-        skillButton = addButton("50 ATK -15 EP", 305, 618, 235);
-        healButton = addButton("50 HP -15 EP", 560, 618, 235);
+        basicAttackButton = addButton(battleSystem.getHero().getBasicDamage() + " ATK", 50, 618, 235);
+        skillButton = addButton(battleSystem.getHero().getSkillDamage() + " ATK -" + battleSystem.getHero().getSkillEnergy() +" EP", 305, 618, 235);
+        healButton = addButton(battleSystem.getHero().getHealingAmount() + " HP -" + battleSystem.getHero().getHealingEnergy() + " EP", 560, 618, 235);
         defendButton = addButton("DEFEND -15 EP", 815, 618, 235);
 
-        battleInfoLabel = addLabel("Opponent's Turn", 403, 540, 304, 40, 40);
-        turnLabel = addLabel("Turn 1", 499, 60, 112, 40, 40);
+        battleInfoLabel = addLabel("       Your Turn", 403, 540, 304, 40, 40);
+        turnLabel = addLabel("Turn " + battleSystem.getTurn(), 499, 60, 130, 40, 40);
 
         heroAvatar = battleSystem.getHero().getAvatarPanel(168, 265);
         opponentAvatar = battleSystem.getOpponent().getAvatarPanel(733, 265);
@@ -88,7 +88,43 @@ public class BattleScreen extends Screen {
             @Override
             public void actionPerformed(ActionEvent e) {
                 battleSystem.getOpponent().takeDamage(battleSystem.getHero().basicAttack());
-                updateStats();
+                battleSystem.nextTurn();
+                updateUI();
+                battleSystem.opponentTurn();
+                updateUI();
+            }
+        });
+
+        skillButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                battleSystem.getOpponent().takeDamage(battleSystem.getHero().useSkill());
+                battleSystem.nextTurn();
+                updateUI();
+                battleSystem.opponentTurn();
+                updateUI();
+            }
+        });
+
+        healButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                battleSystem.getHero().heal();
+                battleSystem.nextTurn();
+                updateUI();
+                battleSystem.opponentTurn();
+                updateUI();
+            }
+        });
+
+        defendButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                battleSystem.getHero().defend();
+                battleSystem.nextTurn();
+                updateUI();
+                battleSystem.opponentTurn();
+                updateUI();
             }
         });
     }
@@ -121,12 +157,27 @@ public class BattleScreen extends Screen {
         panel.add(heroPanel);
     }
 
-    private void updateStats() {
+    private void updateUI() {
+        turnLabel.setText("Turn " + battleSystem.getTurn());
+        battleInfoLabel.setText(battleSystem.isPlayerTurn() ? "       Your Turn" : "Opponent's Turn");
+
         heroHpLabel.setText("HP : " + battleSystem.getHero().getCurrentHp() + "/" + battleSystem.getHero().getMaxHp());
         heroEnergyLabel.setText("Energy : " + battleSystem.getHero().getCurrentEnergy() + "/" + battleSystem.getHero().getMaxEnergy());
     
         opponentHpLabel.setText("HP : " + battleSystem.getOpponent().getCurrentHp() + "/" + battleSystem.getOpponent().getMaxHp());
         opponentEnergyLabel.setText("Energy : " + battleSystem.getOpponent().getCurrentEnergy() + "/" + battleSystem.getOpponent().getMaxEnergy());
+
+        if(battleSystem.isEnoughEnergy("skill"))
+            skillButton.setEnabled(false);
+        if(battleSystem.isEnoughEnergy("heal"))
+            healButton.setEnabled(false);
+        if(battleSystem.isEnoughEnergy("defend"))
+            defendButton.setEnabled(false);
+        
+        if(battleSystem.isFinished()) {
+            screenHandler.switchScreen("title");
+            battleScreenBacksound.stop();
+        }
     }
     
     
