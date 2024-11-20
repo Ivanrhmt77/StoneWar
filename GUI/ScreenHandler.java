@@ -42,6 +42,7 @@ public class ScreenHandler {
         if(newScreen != null && newScreen.getPanel() != null) {
             wrapperPanel.add(newScreen.getPanel());
             currentScreen = newScreen;
+            currentScreen.onShow();
         }
 
         wrapperPanel.revalidate();

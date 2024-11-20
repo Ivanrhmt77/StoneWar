@@ -11,13 +11,15 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import Game.Player;
+import GameSystem.AudioPlayer;
 
-public class Screen {
+public abstract class Screen {
 
     protected JPanel panel;
     protected ScreenHandler screenHandler;
     protected Player player;
     protected JButton backButton;
+    protected AudioPlayer titleScreenBacksound = new AudioPlayer("/Assets/Audio/titleScreenBG.wav");
 
     public Screen(ScreenHandler screenHandler) {
         this.screenHandler = screenHandler;
@@ -42,6 +44,8 @@ public class Screen {
         });
     }
 
+    public abstract void onShow();
+
     protected JLabel addLabel(String text, int x, int y, int width, int height, int fontSize) {
         JLabel label = new JLabel(text);
 
@@ -60,6 +64,7 @@ public class Screen {
         button.setForeground(Color.WHITE);
         button.setFont(new Font("Times New Roman", Font.PLAIN, 30));
         button.setBorder(new LineBorder(Color.WHITE, 1));
+        button.setFocusPainted(false);
 
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override

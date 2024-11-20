@@ -60,4 +60,9 @@ public class WelcomeScreen extends Screen {
         });
     }
 
+    @Override
+    public void onShow() {
+        inputNameField.setText(""); 
+    }
+
 }

@@ -7,11 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import Game.Player;
-import GameSystem.AudioPlayer;
 
 public class TitleScreen extends Screen {
 
-    private AudioPlayer backgroundMusic = new AudioPlayer("/Assets/Audio/titleScreenBG.wav");
     private JLabel titleNameLabel;
     private JLabel playerNameLabel;
     private JLabel levelLabel;
@@ -24,10 +22,7 @@ public class TitleScreen extends Screen {
 
     public TitleScreen(ScreenHandler screenHandler, Player player) {
         super(screenHandler);
-
         this.player = player;
-        backgroundMusic.loop();
-
         initialize();
         submitAction();
     }
@@ -62,6 +57,12 @@ public class TitleScreen extends Screen {
     }
 
     @Override
+    public void onShow() {
+        updatePlayerStats();
+        titleScreenBacksound.loop();
+    }
+
+    @Override
     protected void submitAction() {
         super.submitAction();
         
@@ -92,6 +93,12 @@ public class TitleScreen extends Screen {
                 System.exit(0);
             }
         });
+    }
+
+    private void updatePlayerStats() {
+        levelLabel.setText("Level " + player.getLevel());
+        expLabel.setText("Exp : " + player.getExp() + "/" + player.getMaxExp());
+        goldLabel.setText("Gold : " + player.getGold());
     }
 
 }

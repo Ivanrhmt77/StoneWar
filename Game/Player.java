@@ -1,5 +1,7 @@
 package Game;
 
+import javax.swing.JOptionPane;
+
 public class Player {
     
     private String name;
@@ -17,6 +19,30 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public void addExp(int exp) {
+        this.exp += exp;
+
+        if(this.exp > maxExp)
+            levelUp();
+    }
+
+    private void levelUp() {
+        level++;
+        exp -= maxExp;
+        maxExp += 20;
+
+        JOptionPane.showMessageDialog(
+            null, 
+            "Congratulations! You have leveled up to Level " + level + "!", 
+            "Level Up", 
+            JOptionPane.INFORMATION_MESSAGE
+        );
     }
 
     public String getName() {
@@ -37,10 +63,6 @@ public class Player {
 
     public int getGold() {
         return gold;
-    }
-
-    public void setGold(int gold) {
-        this.gold = gold;
     }
 
 }

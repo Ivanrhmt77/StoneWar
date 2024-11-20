@@ -22,4 +22,9 @@ public class ComingSoon extends Screen {
         panel.add(comingSoonLabel);
     }
 
+    @Override
+    public void onShow() {
+        backButton.requestFocusInWindow();
+    }
+
 }

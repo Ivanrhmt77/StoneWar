@@ -6,6 +6,7 @@ import javax.sound.sampled.Clip;
 import java.io.InputStream;
 
 public class AudioPlayer {
+
     private Clip clip;
 
     public AudioPlayer(String filePath) {
@@ -27,14 +28,13 @@ public class AudioPlayer {
     }
 
     public void loop() {
-        if (clip != null) {
+        if (clip != null)
             clip.loop(Clip.LOOP_CONTINUOUSLY);
-        }
     }
 
     public void stop() {
-        if (clip != null && clip.isRunning()) {
+        if (clip != null && clip.isRunning())
             clip.stop();
-        }
     }
+    
 }
