@@ -10,9 +10,10 @@ import javax.swing.border.LineBorder;
 
 public class ScreenHandler {
 
+    private JPanel wrapperPanel;
+
     private Map<String, Screen> screens = new HashMap<>();
     private Screen currentScreen;
-    private JPanel wrapperPanel;
 
     public ScreenHandler(JFrame window) {
         initialize();
@@ -20,14 +21,8 @@ public class ScreenHandler {
         window.getContentPane().add(wrapperPanel);
     }
 
-    private void initialize() {
-        wrapperPanel = new JPanel();
-        wrapperPanel.setLayout(null);
-        wrapperPanel.setBounds(50, 50, 1100, 768);
-        wrapperPanel.setBorder(new LineBorder(Color.WHITE, 3));
-        wrapperPanel.setBackground(Color.BLACK);
-
-        addScreen("welcome", new WelcomeScreen(this));
+    public Screen getCurrentScreen() {
+        return currentScreen;
     }
 
     public void addScreen(String name, Screen screen) {
@@ -49,8 +44,14 @@ public class ScreenHandler {
         wrapperPanel.repaint();
     }
 
-    public Screen getCurrentScreen() {
-        return currentScreen;
+    private void initialize() {
+        wrapperPanel = new JPanel();
+        wrapperPanel.setLayout(null);
+        wrapperPanel.setBounds(50, 50, 1100, 768);
+        wrapperPanel.setBorder(new LineBorder(Color.WHITE, 3));
+        wrapperPanel.setBackground(Color.BLACK);
+
+        addScreen("welcome", new WelcomeScreen(this));
     }
 
 }

@@ -13,10 +13,25 @@ public class HeroRepository {
     private List<Hero> heroes = new ArrayList<>();
 
     public HeroRepository() {
-        initializeCharacters();
+        initialize();
     }
 
-    private void initializeCharacters() {
+    public Hero getHeroByName(String name) {
+        for (Hero character : heroes) {
+            if (character.getName().equalsIgnoreCase(name))
+                return character;
+        }
+        return null;
+    }
+
+    public Hero getHeroById(int id) {
+        if (id >= 0 && id < heroes.size())
+            return heroes.get(id);
+
+        return null;
+    }
+    
+    private void initialize() {
         heroes.add(new Hero("Ado", 120, 100, 15, 35, 20, 30, 25, loadImage("Assets/Image/Ado.png")));
         heroes.add(new Hero("Crypto King", 200, 80, 18, 40, 25, 25, 20, loadImage("Assets/Image/CryptoKing.png")));
         heroes.add(new Hero("Flower", 100, 120, 12, 45, 30, 35, 25, loadImage("Assets/Image/Flower.jpg")));
@@ -27,23 +42,6 @@ public class HeroRepository {
         heroes.add(new Hero("Red Ranger", 130, 110, 16, 40, 25, 45, 30, loadImage("Assets/Image/RedRanger.png")));
         heroes.add(new Hero("Skull", 100, 90, 20, 60, 40, 25, 25, loadImage("Assets/Image/Skull.png")));
     }
-
-    public Hero getHeroByName(String name) {
-        for (Hero character : heroes) {
-            if (character.getName().equalsIgnoreCase(name)) {
-                return character;
-            }
-        }
-        return null;
-    }
-
-    public Hero getHeroById(int id) {
-        if (id >= 0 && id < heroes.size()) {
-            return heroes.get(id);
-        }
-        return null;
-    }
-    
 
     private ImageIcon loadImage(String path) {
         ImageIcon icon = new ImageIcon(path);

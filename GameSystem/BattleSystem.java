@@ -8,12 +8,29 @@ public class BattleSystem {
 
     private Hero hero;
     private Hero opponent;
+
     private int turn;
 
     public BattleSystem(Hero hero, Hero opponent) {
         this.hero = hero;
         this.opponent = opponent;
         this.turn = 1;
+    }
+
+    public Hero getHero() {
+        return hero;
+    }
+
+    public Hero getOpponent() {
+        return opponent;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public boolean isPlayerTurn() {
+        return turn % 2 != 0;
     }
 
     public boolean isEnoughEnergy(String action) {
@@ -87,20 +104,5 @@ public class BattleSystem {
         opponent.regenerateEnergy();
     }
 
-    public Hero getHero() {
-        return hero;
-    }
-
-    public Hero getOpponent() {
-        return opponent;
-    }
-
-    public int getTurn() {
-        return turn;
-    }
-
-    public boolean isPlayerTurn() {
-        return turn % 2 != 0;
-    }
 
 }

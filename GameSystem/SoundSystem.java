@@ -9,9 +9,9 @@ public class SoundSystem {
 
     private Clip clip;
 
-    public SoundSystem(String filePath) {
+    public SoundSystem(String path) {
         try {
-            InputStream audioSrc = getClass().getResourceAsStream(filePath);
+            InputStream audioSrc = getClass().getResourceAsStream(path);
             AudioInputStream audioInput = AudioSystem.getAudioInputStream(audioSrc);
             clip = AudioSystem.getClip();
             clip.open(audioInput);

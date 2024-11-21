@@ -17,6 +17,26 @@ public class Player {
         this.gold = 0;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public int getMaxExp() {
+        return maxExp;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -43,26 +63,6 @@ public class Player {
             "Level Up", 
             JOptionPane.INFORMATION_MESSAGE
         );
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getExp() {
-        return exp;
-    }
-
-    public int getMaxExp() {
-        return maxExp;
-    }
-
-    public int getGold() {
-        return gold;
     }
 
 }

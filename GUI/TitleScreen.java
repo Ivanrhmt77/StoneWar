@@ -10,8 +10,6 @@ import Game.Player;
 
 public class TitleScreen extends Screen {
 
-    private JLabel titleNameLabel;
-    private JLabel playerNameLabel;
     private JLabel levelLabel;
     private JLabel expLabel;
     private JLabel goldLabel;
@@ -31,8 +29,6 @@ public class TitleScreen extends Screen {
     protected void initialize() {
         super.initialize();
 
-        titleNameLabel = addLabel("Stone War", 276, 100, 548, 160, 120);
-        playerNameLabel = addLabel("Name : " + player.getName(), 30, 30, 326, 32, 24);
         levelLabel = addLabel("Level " + player.getLevel(), 601, 30, 92, 32, 24);
         expLabel = addLabel("Exp : " + player.getExp() + "/" + player.getMaxExp(), 743, 30, 150, 32, 24);
         goldLabel = addLabel("Gold : " + player.getGold(), 943, 30, 127, 32, 24);
@@ -42,8 +38,8 @@ public class TitleScreen extends Screen {
         inventoryButton = addButton("Inventory", 301, 498, 500);
         exitButton = addButton("Exit", 301, 568, 500);
 
-        panel.add(titleNameLabel);
-        panel.add(playerNameLabel);
+        panel.add(addLabel("Stone War", 276, 100, 548, 160, 120));
+        panel.add(addLabel("Name : " + player.getName(), 30, 30, 326, 32, 24));
         panel.add(levelLabel);
         panel.add(expLabel);
         panel.add(goldLabel);
@@ -52,12 +48,6 @@ public class TitleScreen extends Screen {
         panel.add(gachaButton);
         panel.add(inventoryButton);
         panel.add(exitButton);
-    }
-
-    @Override
-    public void onShow() {
-        updatePlayerStats();
-        soundRepository.getSound("titleScreen").loop();
     }
 
     @Override
@@ -94,6 +84,12 @@ public class TitleScreen extends Screen {
                 System.exit(0);
             }
         });
+    }
+
+    @Override
+    protected void onShow() {
+        updatePlayerStats();
+        soundRepository.getSound("titleScreen").loop();
     }
 
     private void updatePlayerStats() {

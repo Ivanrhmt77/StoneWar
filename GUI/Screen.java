@@ -16,13 +16,18 @@ import Repository.SoundRepository;
 public abstract class Screen {
 
     protected JPanel panel;
+    protected JButton backButton;
+
     protected ScreenHandler screenHandler;
     protected Player player;
-    protected JButton backButton;
     protected SoundRepository soundRepository = new SoundRepository();
 
     public Screen(ScreenHandler screenHandler) {
         this.screenHandler = screenHandler;
+    }
+
+    public JPanel getPanel() {
+        return panel;
     }
 
     protected void initialize() {
@@ -88,10 +93,6 @@ public abstract class Screen {
         });
         
         return button;
-    }
-
-    public JPanel getPanel() {
-        return panel;
     }
     
 }

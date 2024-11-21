@@ -20,6 +20,7 @@ public class Hero {
     private int healingEnergy;
     private boolean isDefending;
     private boolean isAlive;
+
     private ImageIcon avatar;
 
     public Hero(String name, int maxHp, int maxEnergy, int basicDamage, int skillDamage, int skillEnergy, int healingAmount, int healingEnergy, ImageIcon avatar) {
@@ -27,7 +28,7 @@ public class Hero {
         this.maxHp = maxHp;
         this.currentHp = maxHp;
         this.maxEnergy = maxEnergy;
-        this.currentEnergy = maxEnergy;
+        this.currentEnergy = 20;
         this.basicDamage = basicDamage;
         this.skillDamage = skillDamage;
         this.skillEnergy = skillEnergy;
@@ -36,46 +37,6 @@ public class Hero {
         this.isDefending = false;
         this.isAlive = true;
         this.avatar = avatar;
-    }
-
-    public int basicAttack() {
-        return basicDamage;
-    }
-
-    public int useSkill() {
-        currentEnergy -= skillEnergy;
-        return skillDamage;
-    }
-
-    public void heal() {
-        currentEnergy -= healingEnergy;
-
-        if(currentHp + healingAmount > maxHp)
-            currentHp = maxHp;
-        else
-            currentHp += healingAmount;
-    }
-
-    public void defend() {
-        currentEnergy -= 15;
-        isDefending = true;
-    }
-
-    public void takeDamage(int damage) {
-        if(isDefending) {
-            damage /= 2;
-            isDefending = false;
-        }
-
-        currentHp -= damage;
-
-        if(currentHp <= 0)
-            isAlive = false;
-    }
-
-    public void regenerateEnergy() {
-        if(currentEnergy < maxEnergy)
-            currentEnergy += 5;
     }
 
     public String getName() {
@@ -134,6 +95,46 @@ public class Hero {
         panel.setBounds(x, y, 200, 200);
         
         return panel;
+    }
+
+    public int basicAttack() {
+        return basicDamage;
+    }
+
+    public int useSkill() {
+        currentEnergy -= skillEnergy;
+        return skillDamage;
+    }
+
+    public void heal() {
+        currentEnergy -= healingEnergy;
+
+        if(currentHp + healingAmount > maxHp)
+            currentHp = maxHp;
+        else
+            currentHp += healingAmount;
+    }
+
+    public void defend() {
+        currentEnergy -= 15;
+        isDefending = true;
+    }
+
+    public void takeDamage(int damage) {
+        if(isDefending) {
+            damage /= 2;
+            isDefending = false;
+        }
+
+        currentHp -= damage;
+
+        if(currentHp <= 0)
+            isAlive = false;
+    }
+
+    public void regenerateEnergy() {
+        if(currentEnergy < maxEnergy)
+            currentEnergy += 5;
     }
 
 }

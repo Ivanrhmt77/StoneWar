@@ -61,7 +61,7 @@ public class WelcomeScreen extends Screen {
     }
 
     @Override
-    public void onShow() {
+    protected void onShow() {
         inputNameField.setText(""); 
     }
 

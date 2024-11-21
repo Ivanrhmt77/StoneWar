@@ -89,6 +89,7 @@ public class BattleScreen extends Screen {
     @Override
     protected void onShow() {
         soundRepository.getSound("battleScreen").loop();
+        updateUI();
     }
 
     private ActionListener createButtonAction(String action) {

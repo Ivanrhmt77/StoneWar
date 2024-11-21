@@ -1,9 +1,317 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.8">
   <diagram name="Page-1" id="nguEIZSLi6p_gPvodlnx">
-    <mxGraphModel dx="714" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2867" dy="2174" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-16" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="280" y="849" width="520" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-9" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=120;tabHeight=40;tabPosition=left;html=1;whiteSpace=wrap;" parent="15JacFiIu0zOkHAgy9Sb-16" vertex="1">
+          <mxGeometry width="520" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-1" value="SoundRepository" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-16" vertex="1">
+          <mxGeometry x="40" y="80" width="200" height="160" as="geometry">
+            <mxRectangle x="40" y="80" width="130" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-2" value="- soundMap: Map&amp;lt;String, SoundSystem&amp;gt;  " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-1" vertex="1">
+          <mxGeometry y="26" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="15JacFiIu0zOkHAgy9Sb-1" vertex="1">
+          <mxGeometry y="70" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-4" value="&lt;div&gt;&lt;span class=&quot;hljs-addition&quot;&gt;&lt;b&gt;&lt;u&gt;+ SoundRepository()&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getSound(soundName: String): SoundSystem&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;hljs-addition&quot;&gt;-&amp;nbsp; initialize(): void&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-1" vertex="1">
+          <mxGeometry y="78" width="200" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-5" value="HeroRepository" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-16" vertex="1">
+          <mxGeometry x="280" y="80" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-6" value="- heroes: List&amp;lt;Hero&amp;gt;  " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-5" vertex="1">
+          <mxGeometry y="26" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="15JacFiIu0zOkHAgy9Sb-5" vertex="1">
+          <mxGeometry y="52" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-8" value="&lt;span class=&quot;hljs-addition&quot;&gt;&lt;b&gt;&lt;u&gt;+ HeroRepository()  &lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getHeroByName(name: String): Hero  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getHeroById(id: int): Hero  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- initialize(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- loadImage(path: String): ImageIcon&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-5" vertex="1">
+          <mxGeometry y="60" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-10" value="Repository" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="15JacFiIu0zOkHAgy9Sb-16" vertex="1">
+          <mxGeometry x="20" y="5" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-21" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="40" y="920" width="160" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-19" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=80;tabHeight=40;tabPosition=left;html=1;whiteSpace=wrap;" parent="15JacFiIu0zOkHAgy9Sb-21" vertex="1">
+          <mxGeometry width="160" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-17" value="Image" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" parent="15JacFiIu0zOkHAgy9Sb-21" vertex="1">
+          <mxGeometry x="40" y="80" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-18" value="Audio" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" parent="15JacFiIu0zOkHAgy9Sb-21" vertex="1">
+          <mxGeometry x="40" y="150" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-20" value="Assets" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="15JacFiIu0zOkHAgy9Sb-21" vertex="1">
+          <mxGeometry x="10" y="5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-32" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="-450" y="2330" width="480" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-30" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=120;tabHeight=40;tabPosition=left;html=1;whiteSpace=wrap;" parent="15JacFiIu0zOkHAgy9Sb-32" vertex="1">
+          <mxGeometry width="480" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-22" value="SoundSystem" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-32" vertex="1">
+          <mxGeometry x="40" y="80" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-23" value="- clip: Clip  " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-22" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="15JacFiIu0zOkHAgy9Sb-22" vertex="1">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-25" value="&lt;span class=&quot;hljs-addition&quot;&gt;&lt;b&gt;&lt;u&gt;+ SoundSystem(path: String)  &lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ play(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ loop(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ stop(): void&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-22" vertex="1">
+          <mxGeometry y="60" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-26" value="BattleSystem" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-32" vertex="1">
+          <mxGeometry x="240" y="80" width="200" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-27" value="&lt;span class=&quot;hljs-deletion&quot;&gt;- hero: Hero  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- opponent: Hero  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- turn: int&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-26" vertex="1">
+          <mxGeometry y="26" width="200" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="15JacFiIu0zOkHAgy9Sb-26" vertex="1">
+          <mxGeometry y="90" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-29" value="&lt;span class=&quot;hljs-addition&quot;&gt;&lt;b&gt;&lt;u&gt;+ BattleSystem(hero: Hero, opponent: Hero)  &lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getHero(): Hero  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getOpponent(): Hero  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getTurn(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ isPlayerTurn(): boolean  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ isEnoughEnergy(action: String): boolean  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ isFinished(): boolean  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ isWinning(): boolean  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ nextTurn(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ opponentTurn(): void&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-26" vertex="1">
+          <mxGeometry y="98" width="200" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-31" value="GameSystem" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="15JacFiIu0zOkHAgy9Sb-32" vertex="1">
+          <mxGeometry x="10" y="5" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-44" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="200" y="2410" width="680" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-41" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=80;tabHeight=40;tabPosition=left;html=1;whiteSpace=wrap;" parent="15JacFiIu0zOkHAgy9Sb-44" vertex="1">
+          <mxGeometry width="680" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-33" value="Player" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-44" vertex="1">
+          <mxGeometry x="440" y="80" width="200" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-34" value="&lt;span class=&quot;hljs-deletion&quot;&gt;- name: String  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- level: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- exp: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- maxExp: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- gold: int&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-33" vertex="1">
+          <mxGeometry y="26" width="200" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-35" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="15JacFiIu0zOkHAgy9Sb-33" vertex="1">
+          <mxGeometry y="110" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-36" value="&lt;span class=&quot;hljs-addition&quot;&gt;&lt;b&gt;&lt;u&gt;+ Player()  &lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getName(): String  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getLevel(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getExp(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getMaxExp(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getGold(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ setName(name: String): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ setGold(gold: int): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ addExp(exp: int): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;-&amp;nbsp; levelUp(): void&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-33" vertex="1">
+          <mxGeometry y="118" width="200" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-37" value="Hero" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-44" vertex="1">
+          <mxGeometry x="40" y="80" width="360" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-38" value="&lt;span class=&quot;hljs-deletion&quot;&gt;- name: String  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- maxHp: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- currentHp: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- maxEnergy: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- currentEnergy: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- basicDamage: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- skillDamage: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- skillEnergy: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- healingAmount: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- healingEnergy: int  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- isDefending: boolean  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- isAlive: boolean  &lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-deletion&quot;&gt;- avatar: ImageIcon&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-37" vertex="1">
+          <mxGeometry y="26" width="360" height="194" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-39" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="15JacFiIu0zOkHAgy9Sb-37" vertex="1">
+          <mxGeometry y="220" width="360" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-40" value="&lt;span class=&quot;hljs-addition&quot;&gt;&lt;b&gt;&lt;u&gt;+ Hero(name: String, maxHp: int, maxEnergy: int, basicDamage: int, skillDamage: int, skillEnergy: int, healingAmount: int, healingEnergy: int, avatar: ImageIcon)  &lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getName(): String  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ isAlive(): boolean  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getAvatar(): ImageIcon  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getCurrentEnergy(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getSkillEnergy(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getHealingEnergy(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getCurrentHp(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getMaxHp(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getMaxEnergy(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getBasicDamage(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getHealingAmount(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getSkillDamage(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ getAvatarPanel(x: int, y: int): JPanel  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ basicAttack(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ useSkill(): int  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ heal(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ defend(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ takeDamage(damage: int): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-addition&quot;&gt;+ regenerateEnergy(): void&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="15JacFiIu0zOkHAgy9Sb-37" vertex="1">
+          <mxGeometry y="228" width="360" height="332" as="geometry" />
+        </mxCell>
+        <mxCell id="15JacFiIu0zOkHAgy9Sb-43" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;Game&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=1;" parent="15JacFiIu0zOkHAgy9Sb-44" vertex="1">
+          <mxGeometry x="10" y="5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-1" value="&lt;i&gt;Screen&lt;/i&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="299" y="1400" width="240" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-2" value="# panel: JPanel  &lt;br&gt;# backButton: JButton  &lt;br&gt;# screenHandler: ScreenHandler  &lt;br&gt;# player: Player  &lt;br&gt;# soundRepository: SoundRepository&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry y="26" width="240" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry y="110" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-4" value="&lt;div&gt;&lt;b&gt;&lt;u&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; Screen(screenHandler: ScreenHandler)  &lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; getPanel(): JPanel  &lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# initialize(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# submitAction(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;&lt;i&gt;# onShow(): void&lt;/i&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# addLabel(text: String, x: int, y: int, width: int, height: int, fontSize: int): JLabel  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# addButton(text: String, x: int, y: int, width: int): JButton&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry y="118" width="240" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-5" value="WelcomeScreen" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="619" y="1400" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-6" value="&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; inputNameField: JFormattedTextField  &lt;br/&gt;&lt;span class=&quot;hljs-section&quot;&gt;- submitButton: JButton&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-5">
+          <mxGeometry y="26" width="240" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-5">
+          <mxGeometry y="70" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-8" value="&lt;b&gt;&lt;u&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; WelcomeScreen(screenHandler: ScreenHandler)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# initialize(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# submitAction(): void&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span class=&quot;hljs-section&quot;&gt;# onShow(): void&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-5">
+          <mxGeometry y="78" width="240" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-9" value="TitleScreen" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="619" y="1600" width="240" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-10" value="&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; levelLabel: JLabel  &lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; expLabel: JLabel  &lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; goldLabel: JLabel  &lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; startButton: JButton  &lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; gachaButton: JButton  &lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; inventoryButton: JButton  &lt;br/&gt;&lt;span class=&quot;hljs-section&quot;&gt;- exitButton: JButton&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-9">
+          <mxGeometry y="26" width="240" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-9">
+          <mxGeometry y="140" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-12" value="&lt;b&gt;&lt;u&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; TitleScreen(screenHandler: ScreenHandler, player: Player)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# initialize(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# submitAction(): void&lt;/span&gt;&lt;div&gt;&lt;span class=&quot;hljs-section&quot;&gt;&lt;/span&gt;# onShow(): void&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; updatePlayerStats(): void&amp;nbsp;&amp;nbsp;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-9">
+          <mxGeometry y="148" width="240" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-13" value="SelectHeroScreen" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="259" y="1890" width="240" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-14" value="&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; selectInfoLabel: JLabel  &lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; myHeroLabel: JLabel  &lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; opponentHeroLabel: JLabel  &lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; buttons: JButton[]  &lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; startButton: JButton&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; heroRepository: HeroRepository  &lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; myHero: Hero  &lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; opponentHero: Hero  &lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;- selectTurn: int&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-13">
+          <mxGeometry y="26" width="240" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-13">
+          <mxGeometry y="180" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-16" value="&lt;b&gt;&lt;u&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; SelectHeroScreen(screenHandler: ScreenHandler, player: Player,&lt;/u&gt;&lt;/b&gt; &lt;b&gt;&lt;u&gt;soundRepository: SoundRepository)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# initialize(): void  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# submitAction(): void&lt;/span&gt;&lt;div&gt;&lt;span class=&quot;hljs-section&quot;&gt;&lt;/span&gt;# onShow(): void&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; updateUI(): void&amp;nbsp;&amp;nbsp;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-13">
+          <mxGeometry y="188" width="240" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-17" value="BattleScreen" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-61" y="1760" width="280" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-18" value="&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; basicAttackButton: JButton&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; skillButton: JButton&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; healButton: JButton&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; defendButton: JButton&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; nextButton: JButton&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; battleInfoLabel: JLabel&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; turnLabel: JLabel&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; heroHpLabel: JLabel&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; heroEnergyLabel: JLabel&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; opponentHpLabel: JLabel&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; opponentEnergyLabel: JLabel&lt;br/&gt;&lt;span class=&quot;hljs-section&quot;&gt;- battleSystem: BattleSystem&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-17">
+          <mxGeometry y="26" width="280" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-17">
+          <mxGeometry y="210" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-20" value="&lt;b&gt;&lt;u&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; BattleScreen(screenHandler: ScreenHandler, player: Player, battleSystem: BattleSystem)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# initialize(): void&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# submitAction(): void&lt;/span&gt;&lt;div&gt;# onShow(): void&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;- createButtonAction(action: String): ActionListener&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; heroStatsPanel(hero: Hero, x: int, y: int): void&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; updateUI(): void&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; updateLabel(hpLabel: JLabel, energyLabel: JLabel, hero: Hero): void&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; endBattle(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-17">
+          <mxGeometry y="218" width="280" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-21" value="ComingSoon" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="2010" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-22" value="- comingSoonLabel: JLabel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-21">
+          <mxGeometry y="26" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-21">
+          <mxGeometry y="52" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-24" value="&lt;b&gt;&lt;u&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; ComingSoon(screenHandler: ScreenHandler)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; onShow(): void&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;# initialize(): void&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-21">
+          <mxGeometry y="60" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-25" value="ScreenHandler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="19" y="1440" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-26" value="&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; wrapperPanel: JPanel&lt;br/&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; screens: Map&lt;span class=&quot;xml&quot;&gt;&amp;lt;String, Screen&amp;gt;&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;hljs-section&quot;&gt;- currentScreen: Screen&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-25">
+          <mxGeometry y="26" width="200" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-27" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-25">
+          <mxGeometry y="80" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-28" value="&lt;b&gt;&lt;u&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; ScreenHandler(window: JFrame)&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; getCurrentScreen(): Screen&lt;br&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; addScreen(name: String, screen: Screen): void&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;+ switchScreen(name: String): void&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-25">
+          <mxGeometry y="88" width="200" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-29" value="GameWindow" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-261" y="1460" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-30" value="&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt; window: JFrame&lt;br/&gt;&lt;span class=&quot;hljs-section&quot;&gt;- screenHandler: ScreenHandler&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-29">
+          <mxGeometry y="26" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-29">
+          <mxGeometry y="70" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-32" value="&lt;span class=&quot;hljs-bullet&quot;&gt;+&lt;/span&gt; main(args: String[]): void&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;&lt;b&gt;&lt;u&gt;+ GameWindow()&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;span class=&quot;hljs-section&quot;&gt;&lt;span class=&quot;hljs-bullet&quot;&gt;-&lt;/span&gt;&amp;nbsp; initialize(): void&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Kp5QVJCKNVm3b_azCD5U-29">
+          <mxGeometry y="78" width="200" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-33" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-29" target="Kp5QVJCKNVm3b_azCD5U-25">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="-171" y="1650" as="sourcePoint" />
+            <mxPoint x="-11" y="1650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-35" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-25" target="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="-51" y="1550" as="sourcePoint" />
+            <mxPoint x="29" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-36" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-5" target="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="329" y="2000" as="sourcePoint" />
+            <mxPoint x="489" y="2000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-37" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-9" target="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="629" y="1513" as="sourcePoint" />
+            <mxPoint x="549" y="1528" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-38" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-21" target="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="629" y="1675" as="sourcePoint" />
+            <mxPoint x="549" y="1625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-39" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-13" target="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="611" y="1930" as="sourcePoint" />
+            <mxPoint x="496" y="1690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-40" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-17" target="Kp5QVJCKNVm3b_azCD5U-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="406" y="1770" as="sourcePoint" />
+            <mxPoint x="414" y="1690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-41" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-1" target="15JacFiIu0zOkHAgy9Sb-1">
+          <mxGeometry x="-0.9412" y="-10" relative="1" as="geometry">
+            <mxPoint x="300" y="1370" as="sourcePoint" />
+            <mxPoint x="460" y="1370" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-42" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-5" target="15JacFiIu0zOkHAgy9Sb-33">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="630" y="1750" as="sourcePoint" />
+            <mxPoint x="790" y="1750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1030" y="1440" />
+              <mxPoint x="1030" y="2620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-43" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-5" target="Kp5QVJCKNVm3b_azCD5U-9">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="869" y="1490" as="sourcePoint" />
+            <mxPoint x="750" y="2380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="920" y="1520" />
+              <mxPoint x="920" y="1750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-44" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-12" target="15JacFiIu0zOkHAgy9Sb-33">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="810.0018181818184" y="1880" as="sourcePoint" />
+            <mxPoint x="810.6381818181819" y="2370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="920" y="1814" />
+              <mxPoint x="920" y="2320" />
+              <mxPoint x="740" y="2320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-45" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-9" target="Kp5QVJCKNVm3b_azCD5U-21">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="500" y="1580" as="sourcePoint" />
+            <mxPoint x="660" y="1580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp5QVJCKNVm3b_azCD5U-46" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1" source="Kp5QVJCKNVm3b_azCD5U-9" target="Kp5QVJCKNVm3b_azCD5U-13">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="749" y="1890" as="sourcePoint" />
+            <mxPoint x="660" y="2020" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="2260" />
+              <mxPoint x="379" y="2260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

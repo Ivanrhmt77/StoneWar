@@ -17,7 +17,7 @@ public class GameWindow {
         initialize();
     }
 
-    public void initialize() {
+    private void initialize() {
         window = new JFrame("Stone War");
         window.getContentPane().setBackground(Color.BLACK);
         window.setSize(1200, 900);
