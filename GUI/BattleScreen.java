@@ -33,7 +33,7 @@ public class BattleScreen extends Screen {
 
         this.player = player;
         this.battleSystem = battleSystem;
-        
+
         initialize();
         submitAction();
     }
@@ -50,6 +50,7 @@ public class BattleScreen extends Screen {
         nextButton.setVisible(false);
 
         battleInfoLabel = addLabel("       Your Turn", 403, 540, 304, 40, 40);
+        battleInfoLabel.setForeground(Color.MAGENTA);
         turnLabel = addLabel("Turn " + battleSystem.getTurn(), 499, 60, 130, 40, 40);
 
         panel.add(addLabel("Basic Attack", 116, 688, 108, 14, 20));
@@ -138,6 +139,7 @@ public class BattleScreen extends Screen {
     private void updateUI() {
         turnLabel.setText("Turn " + battleSystem.getTurn());
         battleInfoLabel.setText(battleSystem.isPlayerTurn() ? "       Your Turn" : "Opponent's Turn");
+        battleInfoLabel.setForeground(battleSystem.isPlayerTurn() ? Color.MAGENTA : Color.WHITE);
 
         updateLabel(heroHpLabel, heroEnergyLabel, battleSystem.getHero());
         updateLabel(opponentHpLabel, opponentEnergyLabel, battleSystem.getOpponent());

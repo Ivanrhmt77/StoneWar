@@ -1,4 +1,4 @@
-package Game;
+package Repository;
 
 import java.awt.Image;
 import java.util.ArrayList;
@@ -6,11 +6,13 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
-public class HeroManager {
+import Game.Hero;
+
+public class HeroRepository {
     
     private List<Hero> heroes = new ArrayList<>();
 
-    public HeroManager() {
+    public HeroRepository() {
         initializeCharacters();
     }
 
