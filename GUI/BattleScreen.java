@@ -15,7 +15,6 @@ import GameSystem.BattleSystem;
 
 public class BattleScreen extends Screen {
 
-    private BattleSystem battleSystem;
     private JButton basicAttackButton;
     private JButton skillButton;
     private JButton healButton;
@@ -27,6 +26,8 @@ public class BattleScreen extends Screen {
     private JLabel heroEnergyLabel;
     private JLabel opponentHpLabel;
     private JLabel opponentEnergyLabel;
+    
+    private BattleSystem battleSystem;
 
     public BattleScreen(ScreenHandler screenHandler, Player player, BattleSystem battleSystem) {
         super(screenHandler);

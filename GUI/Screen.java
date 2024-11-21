@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import Game.Player;
-import GameSystem.AudioPlayer;
+import GameSystem.SoundSystem;
 
 public abstract class Screen {
 
@@ -19,10 +19,10 @@ public abstract class Screen {
     protected ScreenHandler screenHandler;
     protected Player player;
     protected JButton backButton;
-    protected AudioPlayer titleScreenBacksound = new AudioPlayer("/Assets/Audio/titleScreenBG.wav");
-    protected AudioPlayer battleScreenBacksound = new AudioPlayer("/Assets/Audio/battleScreenBG.wav");
-    protected AudioPlayer victorySound = new AudioPlayer("/Assets/Audio/VictorySFX.wav");
-    protected AudioPlayer defeatSound = new AudioPlayer("/Assets/Audio/DefeatSFX.wav");
+    protected SoundSystem titleScreenBacksound = new SoundSystem("/Assets/Audio/titleScreenBG.wav");
+    protected SoundSystem battleScreenBacksound = new SoundSystem("/Assets/Audio/battleScreenBG.wav");
+    protected SoundSystem victorySound = new SoundSystem("/Assets/Audio/VictorySFX.wav");
+    protected SoundSystem defeatSound = new SoundSystem("/Assets/Audio/DefeatSFX.wav");
 
     public Screen(ScreenHandler screenHandler) {
         this.screenHandler = screenHandler;
@@ -72,12 +72,14 @@ public abstract class Screen {
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                button.setBorder(new LineBorder(Color.MAGENTA, 2));
+                if (button.isEnabled())
+                    button.setBorder(new LineBorder(Color.MAGENTA, 2));
             }
     
             @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                button.setBorder(new LineBorder(Color.WHITE, 1));
+                if (button.isEnabled())
+                    button.setBorder(new LineBorder(Color.WHITE, 1));
             }
         });
 

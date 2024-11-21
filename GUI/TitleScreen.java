@@ -6,10 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import Game.Hero;
 import Game.Player;
-import GameSystem.BattleSystem;
-import Repository.HeroRepository;
 
 public class TitleScreen extends Screen {
 
@@ -55,8 +52,6 @@ public class TitleScreen extends Screen {
         panel.add(gachaButton);
         panel.add(inventoryButton);
         panel.add(exitButton);
-
-        screenHandler.addScreen("soon", new ComingSoon(screenHandler));
     }
 
     @Override
@@ -72,18 +67,16 @@ public class TitleScreen extends Screen {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                HeroRepository heroManager = new HeroRepository();
-                Hero hero1 = heroManager.getCharacterByName("Archer");
-                Hero hero2 = heroManager.getCharacterByName("Knight");
-                screenHandler.addScreen("battle", new BattleScreen(screenHandler, player, new BattleSystem(hero1, hero2)));
-                screenHandler.switchScreen("battle");
                 titleScreenBacksound.stop();
+                screenHandler.addScreen("select", new SelectHeroScreen(screenHandler, player));
+                screenHandler.switchScreen("select");
             }
         });
 
         gachaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                screenHandler.addScreen("soon", new ComingSoon(screenHandler));
                 screenHandler.switchScreen("soon");
             }
         });
@@ -91,6 +84,7 @@ public class TitleScreen extends Screen {
         inventoryButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                screenHandler.addScreen("soon", new ComingSoon(screenHandler));
                 screenHandler.switchScreen("soon");
             }
         });
