@@ -16,18 +16,13 @@ import GameSystem.BattleSystem;
 public class BattleScreen extends Screen {
 
     private BattleSystem battleSystem;
-    private JLabel basicAttackLabel;
-    private JLabel skillLabel;
-    private JLabel healLabel;
-    private JLabel defendLabel;
     private JButton basicAttackButton;
     private JButton skillButton;
     private JButton healButton;
     private JButton defendButton;
+    private JButton nextButton;
     private JLabel battleInfoLabel;
     private JLabel turnLabel;
-    private JPanel heroAvatar;
-    private JPanel opponentAvatar;
     private JLabel heroHpLabel;
     private JLabel heroEnergyLabel;
     private JLabel opponentHpLabel;
@@ -35,8 +30,10 @@ public class BattleScreen extends Screen {
 
     public BattleScreen(ScreenHandler screenHandler, Player player, BattleSystem battleSystem) {
         super(screenHandler);
+
         this.player = player;
         this.battleSystem = battleSystem;
+        
         initialize();
         submitAction();
     }
@@ -45,37 +42,32 @@ public class BattleScreen extends Screen {
     protected void initialize() {
         super.initialize();
 
-        basicAttackLabel = addLabel("Basic Attack", 116, 688, 108, 14, 20);
-        skillLabel = addLabel("Skill", 408, 688, 40, 14, 20);
-        healLabel = addLabel("Heal", 663, 688, 41, 14, 20);
-        defendLabel = addLabel("Defend", 905, 688, 65, 14, 20);
-
         basicAttackButton = addButton(battleSystem.getHero().getBasicDamage() + " ATK", 50, 618, 235);
         skillButton = addButton(battleSystem.getHero().getSkillDamage() + " ATK -" + battleSystem.getHero().getSkillEnergy() +" EP", 305, 618, 235);
         healButton = addButton(battleSystem.getHero().getHealingAmount() + " HP -" + battleSystem.getHero().getHealingEnergy() + " EP", 560, 618, 235);
         defendButton = addButton("DEFEND -15 EP", 815, 618, 235);
+        nextButton = addButton("Next", 486, 340, 128);
+        nextButton.setVisible(false);
 
         battleInfoLabel = addLabel("       Your Turn", 403, 540, 304, 40, 40);
         turnLabel = addLabel("Turn " + battleSystem.getTurn(), 499, 60, 130, 40, 40);
 
-        heroAvatar = battleSystem.getHero().getAvatarPanel(168, 265);
-        opponentAvatar = battleSystem.getOpponent().getAvatarPanel(733, 265);
-
-        panel.add(basicAttackLabel);
-        panel.add(skillLabel);
-        panel.add(healLabel);
-        panel.add(defendLabel);
+        panel.add(addLabel("Basic Attack", 116, 688, 108, 14, 20));
+        panel.add(addLabel("Skill", 408, 688, 40, 14, 20));
+        panel.add(addLabel("Heal", 663, 688, 41, 14, 20));
+        panel.add(addLabel("Defend", 905, 688, 65, 14, 20));
 
         panel.add(basicAttackButton);
         panel.add(skillButton);
         panel.add(healButton);
         panel.add(defendButton);
+        panel.add(nextButton);
 
         panel.add(battleInfoLabel);
         panel.add(turnLabel);
 
-        panel.add(heroAvatar);
-        panel.add(opponentAvatar);
+        panel.add(battleSystem.getHero().getAvatarPanel(168, 265));
+        panel.add(battleSystem.getOpponent().getAvatarPanel(733, 265));
 
         heroStatsPanel(battleSystem.getHero(), 30, 30);
         heroStatsPanel(battleSystem.getOpponent(), 891, 30);
@@ -85,54 +77,37 @@ public class BattleScreen extends Screen {
     protected void submitAction() {
         super.submitAction();
 
-        basicAttackButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                battleSystem.getOpponent().takeDamage(battleSystem.getHero().basicAttack());
-                if(!battleSystem.isFinished()) {
-                    battleSystem.nextTurn();
-                }
-                updateUI();
-            }
-        });
-
-        skillButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                battleSystem.getOpponent().takeDamage(battleSystem.getHero().useSkill());
-                if(!battleSystem.isFinished()) {
-                    battleSystem.nextTurn();
-                }
-                updateUI();
-            }
-        });
-
-        healButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                battleSystem.getHero().heal();
-                if(!battleSystem.isFinished()) {
-                    battleSystem.nextTurn();
-                }
-                updateUI();
-            }
-        });
-
-        defendButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                battleSystem.getHero().defend();
-                if(!battleSystem.isFinished()) {
-                    battleSystem.nextTurn();
-                }
-                updateUI();
-            }
-        });
+        basicAttackButton.addActionListener(createButtonAction("basic"));
+        skillButton.addActionListener(createButtonAction("skill"));
+        healButton.addActionListener(createButtonAction("heal"));
+        defendButton.addActionListener(createButtonAction("defend"));
+        nextButton.addActionListener(createButtonAction("next"));
     }
 
     @Override
-    public void onShow() {
+    protected void onShow() {
         battleScreenBacksound.loop();
+    }
+
+    private ActionListener createButtonAction(String action) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switch (action) {
+                    case "basic" -> battleSystem.getOpponent().takeDamage(battleSystem.getHero().basicAttack());
+                    case "skill" -> battleSystem.getOpponent().takeDamage(battleSystem.getHero().useSkill());
+                    case "heal" -> battleSystem.getHero().heal();
+                    case "defend" -> battleSystem.getHero().defend();
+                    case "next" -> battleSystem.opponentTurn();
+                }                
+
+                if(!battleSystem.isFinished()) {
+                    battleSystem.nextTurn();
+                }
+
+                updateUI();
+            }
+        };
     }
 
     private void heroStatsPanel(Hero hero, int x, int y) {
@@ -142,19 +117,21 @@ public class BattleScreen extends Screen {
         heroPanel.setBounds(x, y, 179, 116);
         
         JLabel nameLabel = addLabel("Name : " + hero.getName(), 0, 0, 179, 32, 24);
+        JLabel hpLabel = addLabel("HP : " + hero.getCurrentHp() + "/" + hero.getMaxHp(), 0, 42, 179, 32, 24);
+        JLabel energyLabel = addLabel("Energy : " + hero.getCurrentEnergy() + "/" + hero.getMaxEnergy(), 0, 84, 179, 32, 24);
+
         if (hero == battleSystem.getHero()) {
-            heroHpLabel = addLabel("HP : " + hero.getCurrentHp() + "/" + hero.getMaxHp(), 0, 42, 179, 32, 24);
-            heroEnergyLabel = addLabel("Energy : " + hero.getCurrentEnergy() + "/" + hero.getMaxEnergy(), 0, 84, 179, 32, 24);
-            heroPanel.add(heroHpLabel);
-            heroPanel.add(heroEnergyLabel);
+            heroHpLabel = hpLabel;
+            heroEnergyLabel = energyLabel;
         } else {
-            opponentHpLabel = addLabel("HP : " + hero.getCurrentHp() + "/" + hero.getMaxHp(), 0, 42, 179, 32, 24);
-            opponentEnergyLabel = addLabel("Energy : " + hero.getCurrentEnergy() + "/" + hero.getMaxEnergy(), 0, 84, 179, 32, 24);
-            heroPanel.add(opponentHpLabel);
-            heroPanel.add(opponentEnergyLabel);
+            opponentHpLabel = hpLabel;
+            opponentEnergyLabel = energyLabel;
         }
 
         heroPanel.add(nameLabel);
+        heroPanel.add(hpLabel);
+        heroPanel.add(energyLabel);
+
         panel.add(heroPanel);
     }
 
@@ -162,38 +139,40 @@ public class BattleScreen extends Screen {
         turnLabel.setText("Turn " + battleSystem.getTurn());
         battleInfoLabel.setText(battleSystem.isPlayerTurn() ? "       Your Turn" : "Opponent's Turn");
 
-        heroHpLabel.setText("HP : " + battleSystem.getHero().getCurrentHp() + "/" + battleSystem.getHero().getMaxHp());
-        heroEnergyLabel.setText("Energy : " + battleSystem.getHero().getCurrentEnergy() + "/" + battleSystem.getHero().getMaxEnergy());
-    
-        opponentHpLabel.setText("HP : " + battleSystem.getOpponent().getCurrentHp() + "/" + battleSystem.getOpponent().getMaxHp());
-        opponentEnergyLabel.setText("Energy : " + battleSystem.getOpponent().getCurrentEnergy() + "/" + battleSystem.getOpponent().getMaxEnergy());
+        updateLabel(heroHpLabel, heroEnergyLabel, battleSystem.getHero());
+        updateLabel(opponentHpLabel, opponentEnergyLabel, battleSystem.getOpponent());
 
-        updateButton(skillButton, "skill");
-        updateButton(healButton, "heal");
-        updateButton(defendButton, "defend");
+        basicAttackButton.setEnabled(battleSystem.isPlayerTurn() && battleSystem.isEnoughEnergy("basic"));
+        skillButton.setEnabled(battleSystem.isPlayerTurn() && battleSystem.isEnoughEnergy("skill"));
+        healButton.setEnabled(battleSystem.isPlayerTurn() && battleSystem.isEnoughEnergy("heal"));
+        defendButton.setEnabled(battleSystem.isPlayerTurn() && battleSystem.isEnoughEnergy("defend"));
+        nextButton.setVisible(!battleSystem.isPlayerTurn());
         
-        if(battleSystem.isFinished()) {
-            battleScreenBacksound.stop();
-            
-            if(battleSystem.isWinning()) {
-                victorySound.play();
-                JOptionPane.showMessageDialog(null, "Congratulations! You defeated the Opponent!", "Victory", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                defeatSound.play();
-                JOptionPane.showMessageDialog(null, "You lost! Opponent wins!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
-            }
-            
-            screenHandler.switchScreen("title");
-            victorySound.stop();
-            defeatSound.stop();
-        }
+        if(battleSystem.isFinished())
+            endBattle();
     }
-    
-    private void updateButton(JButton button, String action) {
-        if(battleSystem.isEnoughEnergy(action))
-            button.setEnabled(false);
-        else
-            button.setEnabled(true);
+
+    private void updateLabel(JLabel hpLabel, JLabel energyLabel, Hero hero) {
+        hpLabel.setText("HP : " + hero.getCurrentHp() + "/" + hero.getMaxHp());
+        hpLabel.setForeground(hero.getCurrentHp() <= 30 ? Color.RED : Color.WHITE);
+        energyLabel.setText("Energy : " + hero.getCurrentEnergy() + "/" + hero.getMaxEnergy());
+    }
+
+    private void endBattle() {
+        battleScreenBacksound.stop();
+            
+        if(battleSystem.isWinning()) {
+            victorySound.play();
+            JOptionPane.showMessageDialog(null, "Congratulations! You defeated the Opponent!", "Victory", JOptionPane.INFORMATION_MESSAGE);
+            player.addExp(20);
+            player.setGold(player.getGold() + 100);
+        } else {
+            defeatSound.play();
+            JOptionPane.showMessageDialog(null, "You lost! Opponent wins!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            player.addExp(5);
+        }
+        
+        screenHandler.switchScreen("title");
     }
     
 }

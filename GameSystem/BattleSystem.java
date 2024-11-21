@@ -18,13 +18,13 @@ public class BattleSystem {
 
     public boolean isEnoughEnergy(String action) {
         if(action.equalsIgnoreCase("skill"))
-            return hero.getCurrentEnergy() < hero.getSkillEnergy();
+            return hero.getCurrentEnergy() >= hero.getSkillEnergy();
         if(action.equalsIgnoreCase("heal"))
-            return hero.getCurrentEnergy() < hero.getHealingEnergy();
+            return hero.getCurrentEnergy() >= hero.getHealingEnergy();
         if(action.equalsIgnoreCase("defend"))
-            return hero.getCurrentEnergy() < 15;
+            return hero.getCurrentEnergy() >= 15;
         
-            return false;
+        return true;
     }
 
     public boolean isFinished() {
@@ -40,9 +40,6 @@ public class BattleSystem {
 
     public void nextTurn() {
         turn++;
-
-        if(!isPlayerTurn() && !isFinished())
-            opponentTurn();
     }
 
     public void opponentTurn() {
@@ -88,7 +85,6 @@ public class BattleSystem {
         
         hero.regenerateEnergy();
         opponent.regenerateEnergy();
-        nextTurn();
     }
 
     public Hero getHero() {

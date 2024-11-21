@@ -78,12 +78,6 @@ public class Hero {
             currentEnergy += 5;
     }
 
-    public void reset() {
-        currentHp = maxHp;
-        currentEnergy = maxEnergy;
-        isDefending = false;
-    }
-
     public String getName() {
         return name;
     }

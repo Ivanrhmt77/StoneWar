@@ -47,7 +47,7 @@ public abstract class Screen {
         });
     }
 
-    public abstract void onShow();
+    protected abstract void onShow();
 
     protected JLabel addLabel(String text, int x, int y, int width, int height, int fontSize) {
         JLabel label = new JLabel(text);
