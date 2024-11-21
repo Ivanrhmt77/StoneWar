@@ -57,7 +57,7 @@ public class TitleScreen extends Screen {
     @Override
     public void onShow() {
         updatePlayerStats();
-        titleScreenBacksound.loop();
+        soundRepository.getSound("titleScreen").loop();
     }
 
     @Override
@@ -67,8 +67,7 @@ public class TitleScreen extends Screen {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                titleScreenBacksound.stop();
-                screenHandler.addScreen("select", new SelectHeroScreen(screenHandler, player));
+                screenHandler.addScreen("select", new SelectHeroScreen(screenHandler, player, soundRepository));
                 screenHandler.switchScreen("select");
             }
         });

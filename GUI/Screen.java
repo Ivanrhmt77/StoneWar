@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import Game.Player;
-import GameSystem.SoundSystem;
+import Repository.SoundRepository;
 
 public abstract class Screen {
 
@@ -19,10 +19,7 @@ public abstract class Screen {
     protected ScreenHandler screenHandler;
     protected Player player;
     protected JButton backButton;
-    protected SoundSystem titleScreenBacksound = new SoundSystem("/Assets/Audio/titleScreenBG.wav");
-    protected SoundSystem battleScreenBacksound = new SoundSystem("/Assets/Audio/battleScreenBG.wav");
-    protected SoundSystem victorySound = new SoundSystem("/Assets/Audio/VictorySFX.wav");
-    protected SoundSystem defeatSound = new SoundSystem("/Assets/Audio/DefeatSFX.wav");
+    protected SoundRepository soundRepository = new SoundRepository();
 
     public Screen(ScreenHandler screenHandler) {
         this.screenHandler = screenHandler;

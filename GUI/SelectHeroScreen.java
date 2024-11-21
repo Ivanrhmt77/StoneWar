@@ -10,6 +10,7 @@ import Game.Hero;
 import Game.Player;
 import GameSystem.BattleSystem;
 import Repository.HeroRepository;
+import Repository.SoundRepository;
 
 public class SelectHeroScreen extends Screen {
 
@@ -22,13 +23,14 @@ public class SelectHeroScreen extends Screen {
     private HeroRepository heroRepository = new HeroRepository();
     private Hero myHero;
     private Hero opponentHero;
-    
+
     private int selectTurn;
 
-    public SelectHeroScreen(ScreenHandler screenHandler, Player player) {
+    public SelectHeroScreen(ScreenHandler screenHandler, Player player, SoundRepository soundRepository) {
         super(screenHandler);
 
         super.player = player;
+        super.soundRepository = soundRepository;
 
         initialize();
         submitAction();
@@ -95,6 +97,7 @@ public class SelectHeroScreen extends Screen {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                soundRepository.getSound("titleScreen").stop();
                 screenHandler.addScreen("battle", new BattleScreen(screenHandler, player, new BattleSystem(myHero, opponentHero)));
                 screenHandler.switchScreen("battle");
             }

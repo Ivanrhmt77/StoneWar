@@ -88,7 +88,7 @@ public class BattleScreen extends Screen {
 
     @Override
     protected void onShow() {
-        battleScreenBacksound.loop();
+        soundRepository.getSound("battleScreen").loop();
     }
 
     private ActionListener createButtonAction(String action) {
@@ -162,15 +162,15 @@ public class BattleScreen extends Screen {
     }
 
     private void endBattle() {
-        battleScreenBacksound.stop();
+        soundRepository.getSound("battleScreen").stop();
             
         if(battleSystem.isWinning()) {
-            victorySound.play();
+            soundRepository.getSound("victory").play();
             JOptionPane.showMessageDialog(null, "Congratulations! You defeated the Opponent!", "Victory", JOptionPane.INFORMATION_MESSAGE);
             player.addExp(20);
             player.setGold(player.getGold() + 100);
         } else {
-            defeatSound.play();
+            soundRepository.getSound("defeat").play();
             JOptionPane.showMessageDialog(null, "You lost! Opponent wins!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
             player.addExp(5);
         }
