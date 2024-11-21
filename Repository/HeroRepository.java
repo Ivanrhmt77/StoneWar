@@ -17,15 +17,15 @@ public class HeroRepository {
     }
 
     private void initializeCharacters() {
-        heroes.add(new Hero("Archer", 120, 80, 15, 25, 10, 30, 20, loadImage("Assets/Image/Flower.jpg")));
-        heroes.add(new Hero("Knight", 200, 50, 20, 15, 5, 25, 15, loadImage("Assets/Image/Skull.png")));
-        heroes.add(new Hero("Mage", 100, 120, 10, 35, 20, 40, 25, loadImage("Assets/Image/Skull.png")));
-        heroes.add(new Hero("Rogue", 140, 90, 25, 20, 10, 35, 20, loadImage("Assets/Image/Skull.png")));
-        heroes.add(new Hero("Paladin", 180, 70, 20, 20, 15, 40, 20, loadImage("Assets/Image/Skull.png")));
-        heroes.add(new Hero("Warrior", 220, 60, 30, 10, 5, 25, 15, loadImage("Assets/Image/Skull.png")));
-        heroes.add(new Hero("Berserker", 170, 40, 40, 25, 0, 60, 25, loadImage("Assets/Image/Skull.png")));
-        heroes.add(new Hero("Druid", 130, 110, 15, 15, 25, 40, 30, loadImage("Assets/Image/Skull.png")));
-        heroes.add(new Hero("Assassin", 100, 90, 35, 30, 5, 25, 15, loadImage("Assets/Image/Flower.jpg")));
+        heroes.add(new Hero("Ado", 120, 100, 15, 35, 20, 30, 25, loadImage("Assets/Image/Ado.png")));
+        heroes.add(new Hero("Crypto King", 200, 80, 18, 40, 25, 25, 20, loadImage("Assets/Image/CryptoKing.png")));
+        heroes.add(new Hero("Flower", 100, 120, 12, 45, 30, 35, 25, loadImage("Assets/Image/Flower.jpg")));
+        heroes.add(new Hero("Ghost", 140, 90, 20, 50, 35, 25, 20, loadImage("Assets/Image/Ghost.png")));
+        heroes.add(new Hero("Gojo", 180, 100, 22, 45, 30, 40, 25, loadImage("Assets/Image/Gojo.png")));
+        heroes.add(new Hero("Hengker", 220, 70, 15, 35, 25, 30, 20, loadImage("Assets/Image/Hengker.png")));
+        heroes.add(new Hero("Patrick", 170, 60, 25, 55, 40, 35, 30, loadImage("Assets/Image/Patrick.png")));
+        heroes.add(new Hero("Red Ranger", 130, 110, 16, 40, 25, 45, 30, loadImage("Assets/Image/RedRanger.png")));
+        heroes.add(new Hero("Skull", 100, 90, 20, 60, 40, 25, 25, loadImage("Assets/Image/Skull.png")));
     }
 
     public Hero getHeroByName(String name) {
