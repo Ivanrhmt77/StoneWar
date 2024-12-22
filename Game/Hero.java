@@ -28,7 +28,7 @@ public class Hero {
         this.maxHp = maxHp;
         this.currentHp = maxHp;
         this.maxEnergy = maxEnergy;
-        this.currentEnergy = 20;
+        this.currentEnergy = 50 * maxEnergy / 100;
         this.basicDamage = basicDamage;
         this.skillDamage = skillDamage;
         this.skillEnergy = skillEnergy;
